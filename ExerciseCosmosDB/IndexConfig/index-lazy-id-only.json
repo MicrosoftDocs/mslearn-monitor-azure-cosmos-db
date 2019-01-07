@@ -1,0 +1,14 @@
+{
+    "indexingMode": "lazy",
+    "automatic": true,
+    "includedPaths": [
+        {
+            "path": "/Item/id/?"
+        }
+    ],
+    "excludedPaths": [
+        {
+            "path": "/"
+        }
+    ]
+}

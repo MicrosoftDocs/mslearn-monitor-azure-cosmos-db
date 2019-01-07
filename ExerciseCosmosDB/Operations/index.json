@@ -1,0 +1,48 @@
+{
+    "indexingMode": "consistent",
+    "automatic": true,
+    "includedPaths": [
+        {
+            "path": "/Item/*",
+            "indexes": [
+                {
+                    "kind": "Range",
+                    "dataType": "Number",
+                    "precision": -1
+                },
+                {
+                    "kind": "Hash",
+                    "dataType": "String",
+                    "precision": 3
+                }
+            ]
+        }
+    ],
+    "excludedPaths": [{
+        "path": "/OrderItem/Title",
+    },
+    {
+        "path": "/OrderItem/Website",
+    },
+    {
+        "path": "/OrderItem/ReleaseDate",
+    },
+    {
+        "path": "/OrderItem/ListPricePerItem",
+    },
+    {
+        "path": "/OrderItem/PurchasePrice",
+    },
+    {
+        "path": "/OrderItem/Currency",
+    },
+    {
+        "path": "/PaymentInstrumentType",
+    },
+    {
+        "path": "/Quantity",
+    },
+    {
+        "path": "/Customer/StreetAddress",
+    }]
+}

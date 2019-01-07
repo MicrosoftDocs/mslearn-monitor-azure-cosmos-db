@@ -1,0 +1,31 @@
+{
+    "OrderTime": "3:59 PM",
+    "id": "f9d48756-2c44-27c6-1281-60e02c59ad9d",
+    "OrderStatus": "NEW",
+    "Item": {
+        "id": "2cc3f1a4-f47c-0e37-b66e-986ae6898ebf",
+        "Title": "6ruv8ilkc6voro6",
+        "Category": "Books",
+        "UPC": "0x1eab57901a",
+        "Website": "5p9r3em8j0",
+        "ReleaseDate": "2018-12-21T15:59:20.556559-08:00",
+        "Condition": "NEW",
+        "Merchant": null,
+        "ListPricePerItem": 45.17670443522591,
+        "PurchasePrice": 37.887537042799245,
+        "Currency": "USD"
+    },
+    "Quantity": 29,
+    "PaymentInstrumentType": 1,
+    "PurchaseOrderNumber": "System.Int32[]",
+    "Customer": {
+        "id": "962ae7cc-da41-113b-a78a-3d199c223e01",
+        "FirstName": "Elvis",
+        "LastName": "Wehner",
+        "Email": "Elvis_Wehner66@gmail.com",
+        "StreetAddress": "307 Gaylord Cape",
+        "ZipCode": "45944",
+        "State": "MS"
+    },
+    "ShippingDate": "2018-12-28T15:59:21.25874-08:00"
+}
