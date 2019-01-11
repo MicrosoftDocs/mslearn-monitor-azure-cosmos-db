@@ -44,7 +44,7 @@ namespace MsLearnCosmosDB
                 order.Item = OrderItem.GetRandomItem();
                 order.Quantity = faker.Random.Long(1, 100);
                 order.PaymentInstrumentType = faker.Random.Enum<PaymentType>();
-                order.PurchaseOrderNumber = faker.Random.Digits(10).ToString();
+                order.PurchaseOrderNumber = faker.Random.Replace("###-#####-##");
                 order.Customer = CustomerDetails.GetRandomCustomer();
                 order.ShippingDate = now.Add(new TimeSpan(faker.Random.Int(0, 10), 0, 0, 0));
                 order.Data = faker.Random.Bytes(10);

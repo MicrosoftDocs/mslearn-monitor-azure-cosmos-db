@@ -37,7 +37,9 @@ namespace MsLearnCosmosDB
         }
 
         /// <summary>
-        /// Run the experiment
+        /// Run the experiment. Pre-allocates customers and items so that there are multiple
+        /// orders made by the same customer, and the same item is ordered multiple times.
+        /// This is currently a fixed ratio but could be extended to configurable ones.
         /// </summary>
         /// <returns>The experiment task</returns>
         public async Task RunAsync()
@@ -60,7 +62,6 @@ namespace MsLearnCosmosDB
                 CustomerDetails.Allocate(numCustomers);
                 int numItems = Math.Max(1, (Options.NumberOfOperations * 2) / 10);
                 OrderItem.Allocate(numItems);
-                //Order.Allocate(Options.NumberOfOperations);
             }
 
             int taskCount;
@@ -156,10 +157,10 @@ namespace MsLearnCosmosDB
             double totalSeconds = watch.Elapsed.TotalSeconds;
 
             Console.WriteLine();
-            Console.WriteLine("------------------------------------------------------------------------------------------- ");
+            Console.WriteLine("----------------------------------------------------------------- ");
             LogOutput(type, lastCount, OperationCount, watch.Elapsed.TotalSeconds, requestUnits);
             Console.WriteLine("Total (consumed {0} RUs in {1} seconds)", Math.Round(requestUnits, 1), Math.Round(watch.Elapsed.TotalSeconds));
-            Console.WriteLine("------------------------------------------------------------------------------------------- ");
+            Console.WriteLine("------------------------------------------------------------------");
         }
 
         /// <summary>
