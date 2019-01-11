@@ -42,10 +42,10 @@
         [Option('v', "verbose", Required = false, HelpText = "Log configuration and results (with reduced performance)")]
         public bool Verbose { get; set; }
 
-        [Option('r', "record", Required = false, HelpText = "Print out records as they are read and written)")]
+        [Option('r', "record", Required = false, HelpText = "Print out records as they are read and written")]
         public bool Record { get; set; }
 
-                void Log(string message, params string[] args)
+        void Log(string message, params string[] args)
         {
             if (Verbose)
             {
@@ -188,7 +188,6 @@
                     ConnectionPolicy)) {
                     var program = new Program (client);
                     program.RunAsync ().Wait ();
-                    Console.WriteLine ("CosmosDB experiment complete");
                 }
             }
 
@@ -202,6 +201,7 @@
             finally {
                 //Console.WriteLine ("Press any key to exit...");
                 //Console.ReadLine ();
+                Console.WriteLine("CosmosDB experiment complete");
             }
 
         }

@@ -16,7 +16,16 @@ namespace MsLearnCosmosDB
         public double ListPricePerItem { get; set; }
         public double PurchasePrice { get; set; }
         public string Currency { get; set; }
-        public static string[] Categories = { "Books", "Electronics", "Cosmetics", "Tools", "Kitchenware", "Office Supplies", "Whiteware" };
+        public static string[] Categories =
+        {
+              "Books",
+              "Electronics",
+              "Cosmetics",
+              "Tools",
+              "Kitchenware",
+              "Office Supplies",
+              "Whiteware"
+        };
         public static float[] CategoryWeights = { 0.7F, 0.05F, 0.05F, 0.05F, 0.05F, 0.05F, 0.05F };
         static OrderItem[] Items;
         static Random RandomIndex = new Random();
@@ -41,12 +50,14 @@ namespace MsLearnCosmosDB
                 item.id = faker.Random.Guid();
                 item.Title = faker.Random.AlphaNumeric(15);
                 item.Category = faker.Random.WeightedRandom(Categories, CategoryWeights);
-                item.UPC = faker.Random.Hexadecimal(10);
-                item.Website = faker.Random.AlphaNumeric(10);
+                item.Merchant = faker.Random.Word();
+                item.UPC = faker.Random.Replace("##:####:###");
+                item.Website = faker.Random.Replace("https://???.???????.com").ToLower();
+
                 item.ReleaseDate = DateTime.Now;
                 item.Condition = "NEW";
-                item.ListPricePerItem = (faker.Random.Double() * 100);
-                item.PurchasePrice = item.ListPricePerItem * faker.Random.Double(0.8);
+                item.ListPricePerItem = Math.Round((faker.Random.Double() * 100),2);
+                item.PurchasePrice = Math.Round(item.ListPricePerItem * faker.Random.Double(0.8),2);
                 item.Currency = "USD";
             });
 
