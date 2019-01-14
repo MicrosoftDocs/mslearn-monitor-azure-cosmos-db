@@ -1,5 +1,5 @@
 {
-    "indexingMode": "consistent",
+    "indexingMode": "lazy",
     "automatic": true,
     "includedPaths": [
         {
